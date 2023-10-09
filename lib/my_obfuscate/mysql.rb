@@ -15,6 +15,8 @@ class MyObfuscate
     WHITESPACE = /[\s,;]+/              # We treat the "," separator and ";" terminator as whitespace
 
     def parse_insert_statement(line)
+      line.force_encoding('UTF-8')
+
       if regex_match = insert_regex.match(line)
         {
             :ignore     => !regex_match[1].nil?,
