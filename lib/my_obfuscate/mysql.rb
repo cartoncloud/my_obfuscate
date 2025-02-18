@@ -16,6 +16,7 @@ class MyObfuscate
 
     def parse_insert_statement(line)
       line.force_encoding('UTF-8')
+      line = line.scrub('')
 
       if regex_match = insert_regex.match(line)
         {
